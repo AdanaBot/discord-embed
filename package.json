@@ -2,9 +2,9 @@
   "dependencies": {
     "discord.js": "^13.3.1"
   },
-  "name": "@onlydann/discord-embed",
-  "description": "\"# discord-embed\"",
-  "version": "1.0.0",
+  "name": "dann-embed",
+  "description": "Discord Embed Message Maker",
+  "version": "1.0.4",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
@@ -12,12 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AdanaBot/discord-embed.git"
+    "url": "git+https://github.com/DannArm/discord-embed.git"
   },
   "author": "Dann#1000",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DannArm/discord-embed/issues"
   },
-  "homepage": "https://github.com/DannArm/discord-embed#readme"
+  "homepage": "https://github.com/DannArm/discord-embed#readme",
+  "keywords": [
+    "discord",
+    "discord-embed"
+  ]
 }

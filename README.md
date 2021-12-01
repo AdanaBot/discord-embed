@@ -2,8 +2,10 @@
 
 🧡 An easy discord embed message maker for newbies, just a function, try it yourself!
 
-## Instalation
+## Installation
 > $ npm install dann-embed
+
+* Discord.js v13
 
 # Quick Example
 
@@ -18,13 +20,16 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', async message => {
-  if (message.content === 'a!ping') {
+  if (message.content === '!ping') {
     Embed(message).description("Pong!").send();
   }
 });
 
 client.login('token');
 ```
+
+![Example](https://i.ibb.co/mhyXmPv/Example.png)
+
 # Main Function
 
 ```JavaScript

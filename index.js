@@ -1,12 +1,26 @@
 const { MessageEmbed } = require("discord.js");
 
 class EmbedConstructor{
-	constructor(msg, settings = {}) {
+	constructor(msg, exuser) {
 		this.user = msg.author;
-		this.embed = new MessageEmbed().setAuthor((settings && settings.user && settings.user.username) || this.user.username, (settings && settings.user && settings.user.displayAvatarURL({dynamic: true})) || this.user.displayAvatarURL({dynamic: true}));
+		this.embed = new MessageEmbed().setAuthor((exuser && exuser.username) || this.user.username, (exuser && exuser.displayAvatarURL({dynamic: true})) || this.user.displayAvatarURL({dynamic: true}));
 		this.msg = msg;
-		this.settings = settings;
+		this.exuser = exuser;
 		this.embed.setColor("#00ff00");
+	}
+
+	title(text = "") {
+		if (text && typeof(text) === "string") {
+			this.embed.setDescription(text);
+			return this;
+		} else {
+			return this;
+		}
+	}
+
+	time(timeStamp) {
+		this.embed.setTimestamp(timeStamp);
+		return this;
 	}
 
 	color(color) {
@@ -24,7 +38,7 @@ class EmbedConstructor{
 		}
 	}
 
-	text(text) {
+	description(text) {
 		if (text && typeof(text) === "string") {
 			this.embed.setDescription(text);
 			return this;
@@ -45,7 +59,7 @@ class EmbedConstructor{
 
 	field(name, value, inline = false) {
 		if (!name || typeof(name) !== "string") throw new Error("Field name must be a string");
-		if (!value || typeof(value) !== "string") throw new Error("Field name must be a string");
+		if (!value || typeof(value) !== "string") throw new Error("Field value must be a string");
 		this.embed.addField(name, value, inline === true ? true : false);
 		return this;
 	}
@@ -62,7 +76,7 @@ class EmbedConstructor{
 		return this;
 	}
 
-	send(channel) {
+	async send(channel) {
 		if (channel && channel.type === "GUILD_TEXT") {
 			channel.send({embeds: [this.embed]});
 		} else {
