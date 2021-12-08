@@ -3,7 +3,7 @@
 🧡 An easy discord embed message maker for newbies, just a function, try it yourself!
 
 ## Installation
-> $ npm install dann-embed
+`$ npm install dann-embed`
 
 * Discord.js v13
 
@@ -21,7 +21,7 @@ client.on('ready', () => {
 
 client.on('messageCreate', async message => {
   if (message.content === '!ping') {
-    Embed(message).description("Pong!").send();
+    Embed(message).setSuccess("Pong!").send();
   }
 });
 
@@ -35,67 +35,31 @@ client.login('token');
 ```JavaScript
 const Embed = require('dann-embed');
 
-Embed(message); // Object => {embed: MessageEmbedClass}
+Embed(message); // Class => MessageEmbed
 ```
 ### [Message Class](https://discord.js.org/#/docs/main/stable/class/Message)
 ## Class Functions
-### .author(name, iconUrl)
 
-| PARAMETER  | TYPE | OPTIONAL
-| ------------- |:-------------:|:------:|
-| name      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     |
-| iconUrl      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     | 🗸
-
-### .title(name)
-
-| PARAMETER  | TYPE | OPTIONAL
-| ------------- |:-------------:|:-----:|
-| name      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     |
-
-### .field(name, value, inline)
+### .setText(text)
+Set embed description.
 
 | PARAMETER  | TYPE | OPTIONAL |
-| ------------- |:-------------:|:-----------:|
-| name      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     | 
-| value      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)    |
-| inline     | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)     |🗸
-
-### .description(text)
-
-| PARAMETER  | TYPE | OPTIONAL |
-| ------------- |:-------------:|:------:|
+| ------------- |:-------------:|:-------------:|
 | text      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     | 
 
-### .color(hexColor)
-
-| PARAMETER  | TYPE | OPTIONAL |
-| ------------- |:-------------:|:---------:|
-| hexColor      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     |  
-
-### .time(timestamp)
-
-| PARAMETER  | TYPE | OPTIONAL
-| ------------- |:-------------:|:----:|
-| timestamp      | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)      | 🗸
-
-### .thumbnail(imageLink)
-
-| PARAMETER  | TYPE | OPTIONAL|
-| ------------- |:-------------:|:-------------:|
-| imageLink      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     |
-
-### .image(imageLink)
+### .setError(text)
+Set error message, with default red color of embed.
 
 | PARAMETER  | TYPE | OPTIONAL |
 | ------------- |:-------------:|:-------------:|
-| imageLink      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     |
+| text      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     | 
 
-### .footer(name, iconUrl)
+### .setSuccess(text)
+Set success message, with default green color of embed.
 
-| PARAMETER  | TYPE |  OPTIONAL |
+| PARAMETER  | TYPE | OPTIONAL |
 | ------------- |:-------------:|:-------------:|
-| name      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     |  
-| iconUrl      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     | 🗸
+| text      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)     | 
 
 ### .send(channel)
 
@@ -105,4 +69,5 @@ Embed(message); // Object => {embed: MessageEmbedClass}
 
 ## Join to us!
 
-💜 [OnlyChill Discord Server](https://discord.gg/2kAxJW4rzK)
+* 💚 [Util's package](https://www.npmjs.com/package/dann-util)
+* 💜 [OnlyChill Discord Server](https://discord.gg/2kAxJW4rzK)

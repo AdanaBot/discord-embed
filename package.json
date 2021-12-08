@@ -4,7 +4,7 @@
   },
   "name": "dann-embed",
   "description": "Discord Embed Message Maker",
-  "version": "1.0.4",
+  "version": "1.1.2",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
